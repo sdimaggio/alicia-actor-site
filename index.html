@@ -589,37 +589,51 @@
         </div>
       </div>
       <div class="col-lg-7 reveal">
-        <div class="cf">
-          <div class="row g-3">
-            <div class="col-sm-6">
-              <label>Your Name</label>
-              <input type="text" placeholder="Jane Smith"/>
-            </div>
-            <div class="col-sm-6">
-              <label>Email Address</label>
-              <input type="email" placeholder="jane@casting.com"/>
-            </div>
-            <div class="col-12">
-              <label>Role / Project Type</label>
-              <select>
-                <option value="">Select one…</option>
-                <option>Theatre — Lead</option>
-                <option>Theatre — Supporting</option>
-                <option>Film / TV</option>
-                <option>Musical Theatre</option>
-                <option>General Inquiry</option>
-              </select>
-            </div>
-            <div class="col-12">
-              <label>Message</label>
-              <textarea placeholder="Tell Alicia about your project…"></textarea>
-            </div>
-            <div class="col-12">
-              <button class="btn-fill w-100" style="cursor:pointer;">
-                Send Message &nbsp;<i class="bi bi-arrow-right"></i>
-              </button>
-            </div>
-          </div>
+
+       <form class="cf" id="contact-form">
+
+  <div id="form-content" class="row g-3">
+
+    <div class="col-sm-6">
+      <label>Your Name</label>
+      <input type="text" id="name" name="name" placeholder="Jane Smith" required/>
+    </div>
+
+    <div class="col-sm-6">
+      <label>Email Address</label>
+      <input type="email" id="email" name="email" placeholder="jane@casting.com" required/>
+    </div>
+
+    <div class="col-12">
+      <label>Role / Project Type</label>
+      <select id="project_type" name="project_type" required>
+        <option value="">Select one…</option>
+        <option>Theatre — Lead</option>
+        <option>Theatre — Supporting</option>
+        <option>Film / TV</option>
+        <option>Musical Theatre</option>
+        <option>General Inquiry</option>
+      </select>
+    </div>
+
+    <div class="col-12">
+      <label>Message</label>
+      <textarea id="message" name="message" placeholder="Tell Alicia about your project…" required></textarea>
+    </div>
+
+    <div class="col-12">
+      <button type="submit" id="submit-btn" class="btn-fill w-100" style="cursor:pointer;">
+        Send Message &nbsp;<i class="bi bi-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+
+<div id="success-message" style="display:none; text-align:center; padding:2rem;">
+    <h4 style="color:#28a745;">Message sent successfully!</h4>
+    <p style="color:var(--mid);">Thanks — you’ll hear back soon.</p>
+  </div>
+
+</form>
         </div>
       </div>
     </div>
@@ -661,5 +675,51 @@
   }, { threshold: 0.1 });
   reveals.forEach(el => obs.observe(el));
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+  emailjs.init("ft6ZI1SJN2HQC8hI6"); // <-- replace this
+})();
+
+const form = document.getElementById("contact-form");
+const btn = document.getElementById("submit-btn");
+const formContent = document.getElementById("form-content");
+const successMessage = document.getElementById("success-message");
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  // loading state
+  btn.innerHTML = "Sending...";
+  btn.disabled = true;
+
+  emailjs.send("service_fx8d4yt", "service_fx8d4yt", {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    project_type: document.getElementById("project_type").value,
+    message: document.getElementById("message").value
+  })
+  .then(() => {
+
+    // hide form
+    formContent.style.display = "none";
+
+    // show success
+    successMessage.style.display = "block";
+
+  }, (error) => {
+
+    console.error(error);
+    btn.innerHTML = "Send Message";
+    btn.disabled = false;
+
+    alert("Something went wrong. Please try again.");
+
+  });
+});
+</script>
+
 </body>
 </html>
