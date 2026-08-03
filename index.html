@@ -334,41 +334,41 @@
     .ci-val { font-size: 0.95rem; color: var(--deep); }
 
     /* ── FORM SUCCESS STATE ── */
-.form-success {
-  display: none;
-  padding: 3rem 2rem;
-  background: var(--cream);
-  border: 1px solid var(--mist);
-  text-align: center;
-}
-.form-success-icon {
-  width: 52px; height: 52px;
-  border: 1px solid var(--teal);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 1.5rem;
-}
-.form-success-icon i { color: var(--teal); font-size: 1.3rem; }
-.form-success-label {
-  font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase;
-  color: var(--teal); margin-bottom: 0.75rem;
-}
-.form-success-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2rem; font-weight: 300;
-  color: var(--deep); line-height: 1.15;
-  margin-bottom: 1rem;
-}
-.form-success-title em { font-style: italic; color: var(--teal); }
-.form-success-body {
-  font-size: 0.9rem; color: var(--mid);
-  line-height: 1.8; max-width: 340px; margin: 0 auto;
-}
-.form-success-rule {
-  width: 48px; height: 1px; background: var(--teal);
-  margin: 1.25rem auto;
-}
-    
+    .form-success {
+      display: none;
+      padding: 3rem 2rem;
+      background: var(--cream);
+      border: 1px solid var(--mist);
+      text-align: center;
+    }
+    .form-success-icon {
+      width: 52px; height: 52px;
+      border: 1px solid var(--teal);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.5rem;
+    }
+    .form-success-icon i { color: var(--teal); font-size: 1.3rem; }
+    .form-success-label {
+      font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--teal); margin-bottom: 0.75rem;
+    }
+    .form-success-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; font-weight: 300;
+      color: var(--deep); line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .form-success-title em { font-style: italic; color: var(--teal); }
+    .form-success-body {
+      font-size: 0.9rem; color: var(--mid);
+      line-height: 1.8; max-width: 340px; margin: 0 auto;
+    }
+    .form-success-rule {
+      width: 48px; height: 1px; background: var(--teal);
+      margin: 1.25rem auto;
+    }
+
     /* ── FOOTER ── */
     footer { background: var(--deep); color: rgba(240,248,248,0.45); padding: 2.5rem 0; font-size: 0.78rem; letter-spacing: 0.1em; }
     footer .brand { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--cream); font-style: italic; }
@@ -423,9 +423,9 @@
 <div class="hero" id="home">
   <div class="hero-img-col">
     <img
-  class="hero-photo"
-  src="IMG_6330.jpeg"
-  alt="Alicia Rignola"
+      class="hero-photo"
+      src="IMG_9318.jpeg"
+      alt="Alicia Rignola"
     />
   </div>
   <div class="hero-text">
@@ -489,9 +489,8 @@
     </div>
     <div class="gallery-grid reveal">
       <div class="gallery-item">
-        <div class="g-ph" style="background:linear-gradient(160deg,#1a8888,#0b4a4a);">
-          <i class="bi bi-person-bounding-box"></i><span>Headshot</span>
-        </div>
+        <img src="IMG_6330.jpeg" alt="Alicia Rignola — Headshot"
+          style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:grayscale(30%) contrast(1.08) brightness(0.88);"/>
         <div class="g-overlay"><i class="bi bi-zoom-in"></i></div>
       </div>
       <div class="gallery-item">
@@ -663,57 +662,47 @@
         </div>
       </div>
       <div class="col-lg-7 reveal">
-
-       <form class="cf" id="contact-form">
-
-  <div id="form-content" class="row g-3">
-
-    <div class="col-sm-6">
-      <label>Your Name</label>
-      <input type="text" id="name" name="name" placeholder="Jane Smith" required/>
-    </div>
-
-    <div class="col-sm-6">
-      <label>Email Address</label>
-      <input type="email" id="email" name="email" placeholder="jane@casting.com" required/>
-    </div>
-
-    <div class="col-12">
-      <label>Role / Project Type</label>
-      <select id="project_type" name="project_type" required>
-        <option value="">Select one…</option>
-        <option>Theatre — Lead</option>
-        <option>Theatre — Supporting</option>
-        <option>Film / TV</option>
-        <option>Musical Theatre</option>
-        <option>General Inquiry</option>
-      </select>
-    </div>
-
-    <div class="col-12">
-      <label>Message</label>
-      <textarea id="message" name="message" placeholder="Tell Alicia about your project…" required></textarea>
-    </div>
-
-    <div class="col-12">
-      <button type="submit" id="submit-btn" class="btn-fill w-100" style="cursor:pointer;">
-        Send Message &nbsp;<i class="bi bi-arrow-right"></i>
-      </button>
-    </div>
-  </div>
-
-<div id="success-message" class="form-success">
-  <div class="form-success-icon">
-    <i class="bi bi-check2"></i>
-  </div>
-  <p class="form-success-label">Message Received</p>
-  <h3 class="form-success-title">Thank you for<br>reaching <em>out!</em></h3>
-  <div class="form-success-rule"></div>
-  <p class="form-success-body">I will be in touch soon. In the meantime, feel free to explore my reels and connect with me at my socials below!</p>
-</div>
-
-</form>
-        </div>
+        <form class="cf" id="contact-form">
+          <div id="form-content" class="row g-3">
+            <div class="col-sm-6">
+              <label>Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Jane Smith" required/>
+            </div>
+            <div class="col-sm-6">
+              <label>Email Address</label>
+              <input type="email" id="email" name="email" placeholder="jane@casting.com" required/>
+            </div>
+            <div class="col-12">
+              <label>Role / Project Type</label>
+              <select id="project_type" name="project_type" required>
+                <option value="">Select one…</option>
+                <option>Theatre — Lead</option>
+                <option>Theatre — Supporting</option>
+                <option>Film / TV</option>
+                <option>Musical Theatre</option>
+                <option>General Inquiry</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label>Message</label>
+              <textarea id="message" name="message" placeholder="Tell Alicia about your project…" required></textarea>
+            </div>
+            <div class="col-12">
+              <button type="submit" id="submit-btn" class="btn-fill w-100" style="cursor:pointer;">
+                Send Message &nbsp;<i class="bi bi-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+          <div id="success-message" class="form-success">
+            <div class="form-success-icon">
+              <i class="bi bi-check2"></i>
+            </div>
+            <p class="form-success-label">Message Received</p>
+            <h3 class="form-success-title">Thank you for<br>reaching <em>out!</em></h3>
+            <div class="form-success-rule"></div>
+            <p class="form-success-body">I will be in touch soon. In the meantime, feel free to explore my reels and connect with me at my socials below!</p>
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -776,7 +765,7 @@
 
 <script>
 (function(){
-  emailjs.init("nL7YlK5v3pbvIirnT"); // <-- replace this
+  emailjs.init("nL7YlK5v3pbvIirnT");
 })();
 
 const form = document.getElementById("contact-form");
@@ -787,7 +776,6 @@ const successMessage = document.getElementById("success-message");
 form.addEventListener("submit", function(e) {
   e.preventDefault();
 
-  // loading state
   btn.innerHTML = "Sending...";
   btn.disabled = true;
 
@@ -798,21 +786,13 @@ form.addEventListener("submit", function(e) {
     message: document.getElementById("message").value
   })
   .then(() => {
-
-    // hide form
     formContent.style.display = "none";
-
-    // show success
     successMessage.style.display = "block";
-
   }, (error) => {
-
     console.error(error);
     btn.innerHTML = "Send Message";
     btn.disabled = false;
-
     alert("Something went wrong. Please try again.");
-
   });
 });
 </script>
